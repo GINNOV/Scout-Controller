@@ -4,15 +4,15 @@ It's a navigational robot equipped with sensors and a camera, including a night 
 <p align="center">
   <img src="https://www.robotshop.com/cdn/shop/files/moorebot-scout-ai-powered-autonomous-mobile-robot-4.webp?v=1720479033" alt="Scout Robot" style="width:50%;">
 </p>
-To control Scout Bot we need to [setup](./docs/ros_setup.md) the ROS environment compatible with the bot hardware on your Mac.
+To control Scout Bot we need to [setup](/docs/ros_setup.md) the ROS environment compatible with the bot hardware on your Mac.
 
 ## Requirements
 I built a few tools and apps for different purposes. I couldn't find anything in Python for macOS, so I reversed-engineered some or leveraged other projects (Linux-based) to put things together. Works reliably for what I needed it to do.
 
 ## Dependencies
 It's a Python program, so to run one of the two files, you need to install their dependencies.
-If you're familiar with UV, that would be the easiest otherwise, use the traditional way:
-Just run ``` pip install  -r requirements.txt ``` to install the dependencies
+If you're familiar with UV, that would be the easiest; otherwise, use the traditional way:
+``` pip install  -r requirements.txt ``` to install the dependencies. If you know what you are doing, I would suggest to use UV for virtualizing the env.
 
 # How to run it
 There are two files:
