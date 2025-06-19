@@ -1,7 +1,9 @@
 # SPY1 Project (Scout)
 
 It's a navigational robot equipped with sensors and a camera, including a night vision capability.
-
+<p align="center">
+  <img src="https://www.robotshop.com/cdn/shop/files/moorebot-scout-ai-powered-autonomous-mobile-robot-4.webp?v=1720479033" alt="Scout Robot" style="width:50%;">
+</p>
 To control Scout Bot we need to [setup](./docs/ros_setup.md) the ROS environment compatible with the bot hardware on your Mac.
 
 ## Requirements
