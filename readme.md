@@ -1,49 +1,88 @@
-# SPY1 Project (Scout)
+Here’s the raw Markdown version — just copy and paste this into your README.md file:
 
-It's a navigational robot equipped with sensors and a camera, including a night vision capability.
+# 🥷 SPY1 Project (Scout)
+
+A navigational robot equipped with sensors and a camera, including night vision capability.
+
 <p align="center">
   <img src="https://www.robotshop.com/cdn/shop/files/moorebot-scout-ai-powered-autonomous-mobile-robot-4.webp?v=1720479033" alt="Scout Robot" style="width:50%;">
 </p>
-To control Scout Bot we need to [setup](/docs/ros_setup.md) the ROS environment compatible with the bot hardware on your Mac.
 
-## Requirements
-I built a few tools and apps for different purposes. I couldn't find anything in Python for macOS, so I reversed-engineered some or leveraged other projects (Linux-based) to put things together. Works reliably for what I needed it to do.
+To control Scout Bot, you’ll need to [set up](/docs/ros_setup.md) the ROS environment on your Mac, compatible with the bot’s hardware.
 
-## Dependencies
-It's a Python program, so to run one of the two files, you need to install their dependencies.
-If you're familiar with UV, that would be the easiest; otherwise, use the traditional way:
-``` pip install  -r requirements.txt ``` to install the dependencies. If you know what you are doing, I would suggest to use UV for virtualizing the env.
+---
 
-# How to run it
-There are two files:
-* `getcolorcamera.py` streams live from the bot in color to your Mac. No joystick support.
-* `snoop.py` supports joystick, b/w or color. Change the IP address inside the code where your ROS rely server is running. Without a rely server it won't work.
+## 🛠️ Requirements
 
-## Set ROS server
-Edit the IP address and port based on your settings
+I built a few tools and apps for different purposes. I couldn’t find anything in Python for macOS, so I reverse-engineered some pieces or adapted Linux-based projects to make it work. It’s reliable enough for what I needed.
+
+---
+
+## 📦 Dependencies
+
+This is a Python program. To run either script, you need to install the dependencies.
+
+If you’re familiar with [**uv**](https://github.com/astral-sh/uv), that’s the easiest way. Otherwise, use the traditional method:
+
+```bash
+pip install -r requirements.txt
+
+If you know what you’re doing, I recommend using uv to create a virtual environment.
+
+⸻
+
+▶️ How to Run
+
+There are two entry points:
+	•	getcolorcamera.py — Streams live color video from the bot to your Mac (no joystick support).
+	•	snoop.py — Full control with joystick and color/BW modes.
+Make sure to set the IP address inside the script to where your ROS relay server is running. Without it, the bot won’t respond.
+
+🧭 Set ROS Server
+
+Edit this line in the script to match your network:
+
 ROS_HOST_ADDRESS = "192.168.86.36:11311"
-## Launch it
-`python3 snoop.py`
-If you want to customize the window and see some logging use this:
-`python sp1one.py --windowX 1280 --windowY 720 --verbose`
 
-# Movement keys
-If you don't have a joystick connected to the machine where the code runs, you can use the keyboard to pilot the bot.
-Below are all supported keys.
 
-* W: Move forward
-* S: Move backward
-* A: Rotate left
-* D: Rotate right
-* Q: Strafe left
-* E: Strafe right
-* P: Increase speed
-* O: Decrease speed
-* Space: Take a screenshot
-* H: Go home (not implemented yet)
-* 9: Turn on light 1 (not implemented yet)
-* 0: Turn on light 2 (not implemented yet)
-* Esc: Exit program
+⸻
 
-# Some tools
-Under the tools folder, there are useful utilities hacked together for reverse engineering nodes and other ROS stuff. I was completely new to the framework when I did this, so I built bricks and mortar to figure things out. Your mileage may vary based on your ROS knowledge. Have fun
+🚀 Launch It
+
+Basic launch:
+
+python3 snoop.py
+
+Or customize the window and enable verbose logging:
+
+python3 sp1one.py --windowX 1280 --windowY 720 --verbose
+
+
+⸻
+
+🎮 Movement Keys
+
+If a joystick isn’t connected, you can use the keyboard:
+
+Key	Action
+W / S	Forward / Backward
+A / D	Rotate Left / Right
+Q / E	Strafe Left / Right
+P / O	Increase / Decrease Speed
+Space	Take Screenshot
+H	Go Home (stub)
+9 / 0	Toggle Lights (stub)
+Esc	Exit Program
+
+
+⸻
+
+🧰 Tools
+
+In the tools/ folder, you’ll find small utilities I hacked together to reverse-engineer nodes and experiment with ROS.
+
+I was completely new to the framework when I built this, so I created bricks-and-mortar tools to figure things out.
+
+⚠️ Your mileage may vary depending on your ROS knowledge. Have fun tinkering!
+
+Let me know if you'd like the Markdown as a downloadable `.md` file!
